@@ -7,6 +7,7 @@ public class HappyFamily {
 
   void everyonePlay(boolean baby) {
     String approach = "amble";
+    // approach = "gallop";
 
     play(() -> walk);
     play(() -> baby ? "hitch a ride" : "run");
@@ -15,5 +16,9 @@ public class HappyFamily {
 
   void play(Supplier<String> supplier) {
     System.out.println(supplier.get());
+  }
+
+  public static void main(String... args) {
+    new HappyFamily().everyonePlay(true);
   }
 }
