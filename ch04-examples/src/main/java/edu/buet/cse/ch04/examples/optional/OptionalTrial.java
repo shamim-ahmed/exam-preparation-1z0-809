@@ -20,13 +20,13 @@ public class OptionalTrial {
     System.out.println(opt2.isEmpty());
     Integer result2 = opt2.orElse(Integer.MAX_VALUE);
     System.out.println(result2);
-    
+
     System.out.println();
 
     // example 3
     Optional<Long> opt3 = Optional.of(314159L);
     opt3.ifPresent(System.out::println);
-    
+
     System.out.println();
 
     // example 4
