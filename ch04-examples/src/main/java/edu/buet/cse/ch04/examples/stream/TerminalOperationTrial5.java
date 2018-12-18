@@ -15,5 +15,12 @@ public class TerminalOperationTrial5 {
     IntStream stream2 = IntStream.of(2, 4, 6, 8, 10);
     boolean result2 = stream2.allMatch(n -> n % 2 == 0);
     System.out.println(result2);
+
+    System.out.println();
+
+    // example 3
+    IntStream stream3 = IntStream.of(1, 3, 5, 7, 9);
+    boolean result3 = stream3.noneMatch(n -> n % 2 == 0);
+    System.out.println(result3);
   }
 }
