@@ -10,7 +10,7 @@ public class StringBuilderSupplierTrial {
 
     StringBuilder sb1 = supplier1.get();
     StringBuilder sb2 = supplier2.get();
-    
+
     sb1.append("hello");
     sb2.append("world");
 

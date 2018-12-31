@@ -9,7 +9,7 @@ public class StringConsumerTrial {
 
     consumer1.accept("Hello");
     consumer2.accept("world");
-    
+
     System.out.println(consumer1.getClass().getCanonicalName());
     System.out.println(consumer2.getClass().getCanonicalName());
   }

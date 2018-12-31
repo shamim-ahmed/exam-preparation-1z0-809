@@ -10,7 +10,7 @@ public class TerminalOperationTrial4 {
     Stream<Integer> stream1 = Stream.of(1, 3, 5, 7, 9);
     List<Integer> resultList1 = stream1.map(n -> n * n).collect(Collectors.toList());
     resultList1.stream().forEach(System.out::println);
-    
+
     System.out.println();
 
     // example 2

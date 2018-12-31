@@ -9,7 +9,7 @@ public class TerminalOperationTrial3 {
     IntStream stream1 = IntStream.of(3, 1, 4, 5, 2, 9, 8, 7);
     OptionalInt result1 = stream1.max();
     System.out.println(result1.orElse(Integer.MAX_VALUE));
-    
+
     System.out.println();
 
     // example 2

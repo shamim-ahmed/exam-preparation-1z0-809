@@ -8,7 +8,7 @@ public class TerminalOperationTrial2 {
     // example 1
     LongStream stream1 = LongStream.of(1L, 2L, 3L, 4L, 5L);
     System.out.println(stream1.count());
-    
+
     System.out.println();
 
     // example 2
