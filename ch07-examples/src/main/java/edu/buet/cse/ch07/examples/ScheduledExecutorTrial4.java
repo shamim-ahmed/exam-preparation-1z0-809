@@ -8,7 +8,12 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class ScheduledExecutorTrial4 {
   public static void main(String... args) {
     ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();
-    service.scheduleWithFixedDelay(new MyTask(), 0L, 5, TimeUnit.SECONDS);
+
+    try {
+      service.scheduleWithFixedDelay(new MyTask(), 0L, 5, TimeUnit.SECONDS);
+    } finally {
+      service.shutdown();
+    }
   }
 
   private static class MyTask implements Runnable {

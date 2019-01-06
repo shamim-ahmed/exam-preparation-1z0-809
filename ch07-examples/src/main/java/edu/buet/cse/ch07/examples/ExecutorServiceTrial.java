@@ -8,19 +8,16 @@ import java.util.concurrent.Future;
 
 public class ExecutorServiceTrial {
   public static void main(String... args) {
-    ExecutorService service = null;
+    ExecutorService service = Executors.newSingleThreadExecutor();
 
     try {
-      service = Executors.newSingleThreadExecutor();
       Future<Integer> result = service.submit(new UltimateAnswer());
       Integer val = result.get();
-      System.out.println(val);
+      System.out.printf("The answer to life, universe and everything is %d%n", val);
     } catch (ExecutionException | InterruptedException ex) {
       System.err.println(ex);
     } finally {
-      if (service != null) {
-        service.shutdown();
-      }
+      service.shutdown();
     }
   }
 

@@ -8,8 +8,13 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class ScheduledExecutorTrial3 {
   public static void main(String... args) {
     ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();
-    // only one instance of MyTask will be executed repeatedly
-    service.scheduleAtFixedRate(new MyTask(), 0L, 5L, TimeUnit.SECONDS);
+
+    try {
+      // only one instance of MyTask will be executed repeatedly
+      service.scheduleAtFixedRate(new MyTask(), 0L, 5L, TimeUnit.SECONDS);
+    } finally {
+      service.shutdown();
+    }
   }
 
   private static class MyTask implements Runnable {

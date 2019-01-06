@@ -10,19 +10,16 @@ import java.util.concurrent.TimeoutException;
 
 public class ExecutorServiceTrial2 {
   public static void main(String... args) {
-    ExecutorService service = null;
+    ExecutorService service = Executors.newSingleThreadExecutor();
 
     try {
-      service = Executors.newSingleThreadExecutor();
       Future<Integer> result = service.submit(new UltimateAnswer());
       Integer val = result.get(3000, TimeUnit.MILLISECONDS);
       System.out.println(val);
     } catch (ExecutionException | InterruptedException | TimeoutException ex) {
       System.err.println(ex);
     } finally {
-      if (service != null) {
-        service.shutdown();
-      }
+      service.shutdown();
     }
   }
 

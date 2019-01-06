@@ -6,15 +6,12 @@ import java.util.concurrent.TimeUnit;
 
 public class ScheduledExecutorTrial2 {
   public static void main(String... args) {
-    ScheduledExecutorService service = null;
+    ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();
 
     try {
-      service = Executors.newSingleThreadScheduledExecutor();
       service.schedule(() -> System.out.println("Done"), 5, TimeUnit.SECONDS);
     } finally {
-      if (service != null) {
-        service.shutdown();
-      }
+      service.shutdown();
     }
   }
 }

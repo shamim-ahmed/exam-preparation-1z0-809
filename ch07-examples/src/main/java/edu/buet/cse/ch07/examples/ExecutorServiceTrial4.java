@@ -7,25 +7,20 @@ import java.util.concurrent.TimeUnit;
 
 public class ExecutorServiceTrial4 {
   public static void main(String... args) throws InterruptedException {
-    ExecutorService service = null;
+    ExecutorService service = Executors.newSingleThreadExecutor();
 
     try {
-      service = Executors.newSingleThreadExecutor();
       service.submit(new MyTask());
     } finally {
-      if (service != null) {
-        service.shutdown();
-      }
+      service.shutdown();
     }
 
-    if (service != null) {
-      service.awaitTermination(1000, TimeUnit.MILLISECONDS);
+    service.awaitTermination(1000, TimeUnit.MILLISECONDS);
 
-      if (service.isTerminated()) {
-        System.out.println("All tasks are finished");
-      } else {
-        System.out.println("At least one task is still running");
-      }
+    if (service.isTerminated()) {
+      System.out.println("All tasks are finished");
+    } else {
+      System.out.println("At least one task is still running");
     }
   }
 

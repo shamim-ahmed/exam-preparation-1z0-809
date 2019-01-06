@@ -7,19 +7,16 @@ import java.util.concurrent.Future;
 
 public class ExecutorServiceTrial3 {
   public static void main(String... args) {
-    ExecutorService service = null;
+    ExecutorService service = Executors.newSingleThreadExecutor();
 
     try {
-      service = Executors.newSingleThreadExecutor();
       Future<Integer> result = service.submit(() -> 42);
       Integer val = result.get();
       System.out.println(val);
     } catch (ExecutionException | InterruptedException ex) {
       System.err.println(ex);
     } finally {
-      if (service != null) {
-        service.shutdown();
-      }
+      service.shutdown();
     }
   }
 }
