@@ -7,7 +7,6 @@ public class OptionalTrial {
     // example 1
     Optional<String> opt1 = Optional.empty();
     System.out.println(opt1.isPresent());
-    System.out.println(opt1.isEmpty());
 
     String result1 = opt1.orElse("None");
     System.out.println(result1);
@@ -17,7 +16,6 @@ public class OptionalTrial {
     // example 2
     Optional<Integer> opt2 = Optional.of(Integer.valueOf(4));
     System.out.println(opt2.isPresent());
-    System.out.println(opt2.isEmpty());
     Integer result2 = opt2.orElse(Integer.MAX_VALUE);
     System.out.println(result2);
 
