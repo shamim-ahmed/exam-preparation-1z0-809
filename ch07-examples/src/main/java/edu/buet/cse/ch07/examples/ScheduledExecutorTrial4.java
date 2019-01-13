@@ -7,13 +7,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class ScheduledExecutorTrial4 {
   public static void main(String... args) {
+    // NOTE: there is no shutdown call in this example, as this will terminate the periodic tasks
     ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();
-
-    try {
-      service.scheduleWithFixedDelay(new MyTask(), 0L, 5, TimeUnit.SECONDS);
-    } finally {
-      service.shutdown();
-    }
+    service.scheduleWithFixedDelay(new MyTask(), 0L, 5, TimeUnit.SECONDS);
   }
 
   private static class MyTask implements Runnable {

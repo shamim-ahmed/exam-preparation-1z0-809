@@ -17,6 +17,7 @@ public class ScheduledExecutorTrial {
     } catch (ExecutionException | InterruptedException ex) {
       System.err.println(ex);
     } finally {
+      // calling shutdown is necessary here
       service.shutdown();
     }
   }

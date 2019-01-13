@@ -11,6 +11,7 @@ public class ScheduledExecutorTrial2 {
     try {
       service.schedule(() -> System.out.println("Done"), 5, TimeUnit.SECONDS);
     } finally {
+      // calling shutdown is necessary here
       service.shutdown();
     }
   }
