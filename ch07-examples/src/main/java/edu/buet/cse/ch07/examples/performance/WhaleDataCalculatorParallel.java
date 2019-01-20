@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class WhaleDataCalculator2 {
+public class WhaleDataCalculatorParallel {
   AtomicInteger counter = new AtomicInteger(0);
 
   public void processAllData(List<Integer> valueList) {
@@ -26,7 +26,7 @@ public class WhaleDataCalculator2 {
   }
 
   public static void main(String... args) {
-    WhaleDataCalculator2 calculator = new WhaleDataCalculator2();
+    WhaleDataCalculatorParallel calculator = new WhaleDataCalculatorParallel();
     List<Integer> valueList = new ArrayList<>();
 
     for (int i = 0; i < 4000; i++) {
